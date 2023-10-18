@@ -1,5 +1,5 @@
 @import "@clr/ui/clr-ui.css";
-
+@import "~prismjs/themes/prism-dark.css";
 @font-face {
   font-family: "Virgil";
   src: url("./assets/fonts/Virgil.woff2") format("woff2");

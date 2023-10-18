@@ -1,0 +1,93 @@
+.box-subtitle {
+  text-align: center;
+  margin-top: 5rem;
+}
+.subtitle {
+  font-family: "Fragment Mono", monospace;
+}
+
+.body-json {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  height: 26rem;
+
+  margin-top: 1.5rem;
+}
+
+.json-text {
+  grid-area: 1/2/8/8;
+  border-radius: 20px;
+}
+
+.body-resp {
+  grid-area: 5/2/9/8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1400px) {
+  .box-subtitle {
+    padding: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .json-text {
+    grid-area: 1/2/8/8;
+  }
+
+  .body-resp {
+    grid-area: 6/2/8/8;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 1268px) {
+  .box-subtitle {
+    padding: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .json-text {
+    grid-area: 1/2/6/8;
+    border-radius: 25px;
+  }
+
+  .body-resp {
+    grid-area: 5/2/5/8;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 412px), (max-height: 800px) {
+  .box-subtitle {
+    padding: 2rem;
+    margin-top: 0.5rem;
+  }
+
+  .json-text {
+    grid-area: 1/1/8/9;
+  }
+
+  .body-resp {
+    grid-area: 6/2/8/8;
+    display: flex;
+  }
+}
+
+@media screen and (max-height: 640px), (max-width: 400px) {
+  .box-subtitle {
+    padding: 2rem;
+  }
+
+  .json-text {
+    grid-area: 1/1/6/9;
+  }
+
+  .body-resp {
+    grid-area: 5/2/5/8;
+    display: flex;
+  }
+}

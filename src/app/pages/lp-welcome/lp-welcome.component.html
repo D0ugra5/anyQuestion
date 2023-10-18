@@ -1,0 +1,22 @@
+<app-welcome-box></app-welcome-box>
+<div class="box-subtitle">
+  <p class="subtitle">
+    Adicione suas questões seguindo o formato Json
+    <br />
+    <span>Como formatar seu <a>Json</a>?</span>
+  </p>
+  <div class="body-json">
+    <textarea
+      class="json-text"
+      [(ngModel)]="codigoJSON"
+      rows="10"
+      cols="40"
+    ></textarea>
+    <div class="body-resp">
+      <button class="btn btn-primary" (click)="exibirJSON()">
+        Validar JSON
+      </button>
+      <!-- <pre>{{ jsonFormatado }}</pre> -->
+    </div>
+  </div>
+</div>

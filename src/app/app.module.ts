@@ -4,10 +4,18 @@ import { ClarityModule } from '@clr/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BoxQuestionComponent } from './components/questions/box-question/box-question.component';
-
+import { LpWelcomeComponent } from './pages/lp-welcome/lp-welcome.component';
+import { WelcomeBoxComponent } from './components/welcome-box/welcome-box.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
-  declarations: [AppComponent, BoxQuestionComponent],
-  imports: [BrowserModule, AppRoutingModule, ClarityModule],
+  declarations: [
+    AppComponent,
+    BoxQuestionComponent,
+    LpWelcomeComponent,
+    WelcomeBoxComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, ClarityModule, FormsModule],
+
   providers: [],
   bootstrap: [AppComponent],
 })
