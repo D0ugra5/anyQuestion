@@ -1,0 +1,22 @@
+.main {
+  display: flex;
+  max-width: 15rem;
+  flex-direction: row;
+}
+
+.bar {
+  z-index: 0;
+  border: 1px solid #ffff;
+  border-radius: 5rem;
+  margin-right: 0.5rem;
+  margin-left: 1rem;
+  width: 15rem;
+}
+
+.experinceBar {
+  z-index: 1;
+  background-color: green;
+  border-radius: 5rem;
+
+  height: 100%;
+}

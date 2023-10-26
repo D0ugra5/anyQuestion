@@ -7,12 +7,16 @@ import { BoxQuestionComponent } from './components/questions/box-question/box-qu
 import { LpWelcomeComponent } from './pages/lp-welcome/lp-welcome.component';
 import { WelcomeBoxComponent } from './components/welcome-box/welcome-box.component';
 import { FormsModule } from '@angular/forms';
+import { LpQuestionComponent } from './pages/lp-question/lp-question.component';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
     BoxQuestionComponent,
     LpWelcomeComponent,
     WelcomeBoxComponent,
+    LpQuestionComponent,
+    ProgressBarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ClarityModule, FormsModule],
 
