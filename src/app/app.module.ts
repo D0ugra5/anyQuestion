@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { LpQuestionComponent } from './pages/lp-question/lp-question.component';
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 import { AlternativeBoxComponent } from './components/alternative-box/alternative-box.component';
+import { LpCorrectionComponent } from './pages/lp-correction/lp-correction.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { AlternativeBoxComponent } from './components/alternative-box/alternativ
     LpQuestionComponent,
     ProgressBarComponent,
     AlternativeBoxComponent,
+    LpCorrectionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ClarityModule, FormsModule],
 
