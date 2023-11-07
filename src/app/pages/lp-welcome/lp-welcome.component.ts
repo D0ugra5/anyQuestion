@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lp-welcome',
@@ -6,8 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./lp-welcome.component.css'],
 })
 export class LpWelcomeComponent {
+  constructor(private router: Router) {}
   opened = false;
-
   codigoJSON = '';
   jsonFormatado = '';
 
@@ -16,15 +17,16 @@ export class LpWelcomeComponent {
       const objetoJSON = JSON.parse(this.codigoJSON);
 
       if (this.validarJSON(objetoJSON)) {
-        console.log('O JSON segue o formato da interface QuestionAndAnswer.');
+        this.jsonFormatado = JSON.stringify(objetoJSON, null, 2);
+        localStorage.setItem('question', this.jsonFormatado);
+        this.router.navigate(['/question']);
       } else {
         console.log(
           'O JSON não segue o formato da interface QuestionAndAnswer.'
         );
       }
-
-      this.jsonFormatado = JSON.stringify(objetoJSON, null, 2);
     } catch (e: any) {
+      localStorage.clear();
       this.jsonFormatado = 'Erro ao analisar o JSON: ' + e.message;
       this.opened = true;
     }
