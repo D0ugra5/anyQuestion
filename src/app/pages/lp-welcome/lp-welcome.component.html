@@ -16,7 +16,20 @@
       <button class="btn btn-primary" (click)="exibirJSON()">
         Validar JSON
       </button>
-      <!-- <pre>{{ jsonFormatado }}</pre> -->
     </div>
   </div>
 </div>
+
+<clr-modal [(clrModalOpen)]="opened" [clrModalStaticBackdrop]="false">
+  <h3 class="modal-title">
+    Ops! Parece que seu Json não está no formato adequado
+  </h3>
+  <div class="modal-body">
+    <p>Click <a href="">aqui</a> para saber como formatar seu Json</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="opened = false">
+      Voltar para tela inicial
+    </button>
+  </div>
+</clr-modal>
