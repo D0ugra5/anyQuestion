@@ -1,6 +1,20 @@
 <main class="main">
   <div class="container">
-    <app-progress-bar class="progress-bar"></app-progress-bar>
-    <app-box-question class="box-question"></app-box-question>
+    <app-progress-bar
+      [progressBar]="progressBar"
+      class="progress-bar"
+    ></app-progress-bar>
+    <app-box-question
+      [question]="question"
+      class="box-question"
+    ></app-box-question>
+
+    <button
+      type="button
+    "
+      (click)="nextQuestion()"
+    >
+      aaaaaaa
+    </button>
   </div>
 </main>

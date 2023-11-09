@@ -37,11 +37,11 @@ export class LpWelcomeComponent {
       for (let index = 0; index < jsonString.length; index++) {
         if (
           jsonString[index].pergunta &&
-          jsonString[index].alternativas &&
-          jsonString[index].alternativas.a &&
-          jsonString[index].alternativas.b &&
-          jsonString[index].alternativas.c &&
-          jsonString[index].alternativas.d &&
+          jsonString[index].alternatives &&
+          jsonString[index].alternatives.a &&
+          jsonString[index].alternatives.b &&
+          jsonString[index].alternatives.c &&
+          jsonString[index].alternatives.d &&
           jsonString[index].resposta_correta
         ) {
         } else {
