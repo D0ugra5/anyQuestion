@@ -72,6 +72,7 @@
   }
 
   .body-resp {
+    z-index: 99999;
     grid-area: 6/2/8/8;
     display: flex;
   }
