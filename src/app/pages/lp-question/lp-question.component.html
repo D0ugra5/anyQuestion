@@ -5,16 +5,10 @@
       class="progress-bar"
     ></app-progress-bar>
     <app-box-question
+      (nextClick)="nextQuestion()"
+      #boxQuestionComponent
       [question]="question"
       class="box-question"
     ></app-box-question>
-
-    <button
-      type="button
-    "
-      (click)="nextQuestion()"
-    >
-      aaaaaaa
-    </button>
   </div>
 </main>

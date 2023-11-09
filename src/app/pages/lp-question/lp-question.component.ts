@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { QuestionAndAnswer } from 'src/app/interfaces/question-interface';
 
@@ -14,27 +14,33 @@ export class LpQuestionComponent implements OnInit {
     resposta_correta: '',
     answered: '',
   };
-  constructor(private router: Router) {}
-  progressBar: number = 23;
+
   questions: QuestionAndAnswer[] = JSON.parse(
     localStorage.getItem('question')!
   );
+  totalyQuestions: number = this.questions.length;
+  constructor(private router: Router) {}
+  progressBar: number = 23;
 
   ngOnInit(): void {
     if (!this.questions) this.router.navigate(['/']);
     this.nextQuestion();
   }
 
-  nextQuestion() {
-    const totalyQuestions: number = this.questions.length;
-    this.progressBar = (100 * this.questionNow()) / totalyQuestions;
-    const isFinish = this.questionNow() == totalyQuestions ? true : false;
+  nextQuestion(): void {
+    const howQuestionNow = this.questionNow();
+    this.progressBar = this.updateProgressBar(
+      this.totalyQuestions,
+      howQuestionNow
+    );
+    const isFinish = this.questionNow() == this.totalyQuestions ? true : false;
 
     if (isFinish) {
       this.router.navigate(['/correct']);
     } else {
-      this.question = this.questions[this.questionNow()];
-      localStorage.setItem('answer', String(this.questionNow()));
+      this.question = this.questions[howQuestionNow];
+
+      localStorage.setItem('answer', String(howQuestionNow));
     }
   }
 
@@ -46,5 +52,7 @@ export class LpQuestionComponent implements OnInit {
     return questionNumberNow;
   }
 
-  updateProgressBar() {}
+  updateProgressBar(totalyQuestion: number, numberQuestion: number): number {
+    return (100 * numberQuestion) / totalyQuestion;
+  }
 }

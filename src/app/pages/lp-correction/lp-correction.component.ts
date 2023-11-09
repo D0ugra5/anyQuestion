@@ -13,4 +13,6 @@ export class LpCorrectionComponent {
     resposta_correta: '',
     answered: '',
   };
+
+  alterAfter() {}
 }

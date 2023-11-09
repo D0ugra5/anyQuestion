@@ -7,6 +7,12 @@
       [alternatives]="question.alternatives"
       class="alternative-box"
     ></app-alternative-box>
-    <button class="btn-next btn btn-success">Next</button>
+    <button
+      type="button"
+      (click)="nextQuestion()"
+      class="btn-next btn btn-success"
+    >
+      Next
+    </button>
   </div>
 </div>
