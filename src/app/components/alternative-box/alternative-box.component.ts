@@ -8,6 +8,7 @@ import { AlternativeQuestion } from 'src/app/interfaces/question-interface';
 })
 export class AlternativeBoxComponent {
   @Input({ required: true }) alternatives!: AlternativeQuestion;
+
   @Output() optionSelected: EventEmitter<string> = new EventEmitter<string>();
 
   onItemChange(value: any) {

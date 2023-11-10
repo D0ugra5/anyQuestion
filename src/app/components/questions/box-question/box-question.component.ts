@@ -8,7 +8,7 @@ import { QuestionAndAnswer } from 'src/app/interfaces/question-interface';
 })
 export class BoxQuestionComponent {
   @Output() nextClick: EventEmitter<any> = new EventEmitter();
-
+  @Input() hiddenNext!: boolean;
   @Input({ required: true }) question!: QuestionAndAnswer;
 
   optionsSelected: string = '';

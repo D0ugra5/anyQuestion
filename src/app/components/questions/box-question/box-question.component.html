@@ -9,6 +9,7 @@
       class="alternative-box"
     ></app-alternative-box>
     <button
+      [hidden]="hiddenNext"
       type="button"
       (click)="nextQuestion()"
       class="btn-next btn btn-success"

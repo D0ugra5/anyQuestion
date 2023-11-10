@@ -1,10 +1,10 @@
 <div class="main">
   <div class="text-result">
-    <p>Parabéns Seus Cranio de elephant <br />Você acerto 68%</p>
+    <p>{{ textHitsRate }}</p>
   </div>
-  <div class="container">
+  <div class="container" *ngFor="let question of questions">
     <app-box-question
-      (nextClick)="(alterAfter)"
+      [hiddenNext]="true"
       [question]="question"
       class="teste"
     ></app-box-question>
