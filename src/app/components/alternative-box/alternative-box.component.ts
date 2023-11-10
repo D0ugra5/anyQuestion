@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AlternativeQuestion } from 'src/app/interfaces/question-interface';
 
 @Component({
@@ -8,4 +8,9 @@ import { AlternativeQuestion } from 'src/app/interfaces/question-interface';
 })
 export class AlternativeBoxComponent {
   @Input({ required: true }) alternatives!: AlternativeQuestion;
+  @Output() optionSelected: EventEmitter<string> = new EventEmitter<string>();
+
+  onItemChange(value: any) {
+    this.optionSelected.emit(value.target.value);
+  }
 }

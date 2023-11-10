@@ -4,6 +4,7 @@
       {{ question.pergunta }}
     </p>
     <app-alternative-box
+      (optionSelected)="checkedMarked($event)"
       [alternatives]="question.alternatives"
       class="alternative-box"
     ></app-alternative-box>

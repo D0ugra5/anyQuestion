@@ -27,20 +27,31 @@ export class LpQuestionComponent implements OnInit {
     this.nextQuestion();
   }
 
-  nextQuestion(): void {
-    const howQuestionNow = this.questionNow();
-    this.progressBar = this.updateProgressBar(
-      this.totalyQuestions,
-      howQuestionNow
-    );
+  nextQuestion(optionMarked?: string): void {
+    const howQuestionBefore = this.questionNow();
+    if (optionMarked) {
+      localStorage.setItem('answer', String(howQuestionBefore));
+    } else {
+      //tratar aqui se não houver alternativa selecionada
+    }
+
     const isFinish = this.questionNow() == this.totalyQuestions ? true : false;
 
     if (isFinish) {
       this.router.navigate(['/correct']);
     } else {
-      this.question = this.questions[howQuestionNow];
+      const attQuestionNow = this.questionNow();
+      const questionNow = this.questions[attQuestionNow];
 
-      localStorage.setItem('answer', String(howQuestionNow));
+      this.question = questionNow;
+
+      this.questions[howQuestionBefore].answered = optionMarked!;
+
+      localStorage.setItem('question', JSON.stringify(this.questions));
+      this.progressBar = this.updateProgressBar(
+        this.totalyQuestions,
+        attQuestionNow
+      );
     }
   }
 

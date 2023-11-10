@@ -11,7 +11,20 @@ export class BoxQuestionComponent {
 
   @Input({ required: true }) question!: QuestionAndAnswer;
 
+  optionsSelected: string = '';
+
   nextQuestion() {
-    this.nextClick.emit();
+    if (this.optionsSelected) {
+      this.nextClick.emit(this.optionsSelected);
+
+      const radioButtons = document.getElementsByName('radio-full');
+      radioButtons.forEach((radioButton: any) => {
+        radioButton.checked = false;
+      });
+    }
+  }
+
+  checkedMarked(value: string) {
+    this.optionsSelected = value;
   }
 }
