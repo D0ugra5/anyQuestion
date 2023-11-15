@@ -23,8 +23,12 @@ export class LpQuestionComponent implements OnInit {
   progressBar: number = 23;
 
   ngOnInit(): void {
-    if (!this.questions) this.router.navigate(['/']);
-    this.nextQuestion();
+    console.log(this.question);
+    if (this.questions.length === 0) {
+      this.router.navigate(['/']);
+    } else {
+      this.nextQuestion();
+    }
   }
 
   nextQuestion(optionMarked?: string): void {

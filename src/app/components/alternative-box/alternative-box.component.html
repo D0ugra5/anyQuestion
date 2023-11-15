@@ -1,56 +1,15 @@
-<div class="container clr-form-control">
-  <div class="clr-control-container clr-control-inline">
-    <div class="clr-radio-wrapper">
-      <input
-        type="radio"
-        id="vertical-radio1"
-        name="radio-full"
-        value="a"
-        class="clr-radio"
-        (change)="onItemChange($event)"
-      />
-      <label for="vertical-radio1" class="clr-control-label">{{
-        alternatives.a
-      }}</label>
-    </div>
-    <div class="clr-radio-wrapper">
-      <input
-        type="radio"
-        id="vertical-radio2"
-        name="radio-full"
-        value="b"
-        class="clr-radio"
-        (change)="onItemChange($event)"
-      />
-      <label for="vertical-radio2" class="clr-control-label">{{
-        alternatives.b
-      }}</label>
-    </div>
-    <div class="clr-radio-wrapper">
-      <input
-        type="radio"
-        id="vertical-radio3"
-        name="radio-full"
-        value="c"
-        class="clr-radio"
-        (change)="onItemChange($event)"
-      />
-      <label for="vertical-radio3" class="clr-control-label">{{
-        alternatives.c
-      }}</label>
-    </div>
-    <div class="clr-radio-wrapper">
-      <input
-        type="radio"
-        id="vertical-radio12"
-        name="radio-full"
-        value="d"
-        class="clr-radio"
-        (change)="onItemChange($event)"
-      />
-      <label for="vertical-radio12" class="clr-control-label">{{
-        alternatives.d
-      }}</label>
-    </div>
-  </div>
+<div class="clr-radio-wrapper clr-error" [ngStyle]="{ border: styleBorder }">
+  <input
+    [disabled]="isDisabled"
+    type="radio"
+    id="vertical-radio1"
+    name="radio-full"
+    [value]="nameRadioBox"
+    class="clr-radio clr-error"
+    checked="true"
+    (change)="onItemChange($event)"
+  />
+  <label for="vertical-radio1" class="clr-control-label">{{
+    nameRadioBox
+  }}</label>
 </div>

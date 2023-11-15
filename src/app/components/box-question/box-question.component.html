@@ -1,1 +1,42 @@
-<p>box-question works!</p>
+<div class="main">
+  <div class="container-question">
+    <p class="question-text">
+      {{ question.pergunta }}
+    </p>
+
+    <div class="alternative-box clr-form-control">
+      <div class="clr-control-container clr-control-inline">
+        <div
+          *ngFor="let questionObject of Object.values(question.alternatives)"
+        >
+          <div
+            class="clr-radio-wrapper"
+            [ngStyle]="{ border: borderColorRightOrWrong(questionObject) }"
+          >
+            <input
+              type="radio"
+              id="{{ questionObject }}"
+              [disabled]="isCorrect"
+              name="radio-full"
+              [value]="getValueAlternative(questionObject)"
+              class="clr-radio"
+              (change)="checkedMarked($event)"
+            />
+            <label for="{{ questionObject }}" class="clr-control-label">{{
+              questionObject
+            }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button
+      [hidden]="hiddenNext"
+      type="button"
+      (click)="nextQuestion()"
+      class="btn-next btn btn-success"
+    >
+      Next
+    </button>
+  </div>
+</div>

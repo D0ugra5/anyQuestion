@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AlternativeBoxComponent } from './components/alternative-box/alternative-box.component';
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
-import { BoxQuestionComponent } from './components/questions/box-question/box-question.component';
+import { BoxQuestionComponent } from './components/box-question/box-question.component';
 import { WelcomeBoxComponent } from './components/welcome-box/welcome-box.component';
 import { LpCorrectionComponent } from './pages/lp-correction/lp-correction.component';
 import { LpQuestionComponent } from './pages/lp-question/lp-question.component';

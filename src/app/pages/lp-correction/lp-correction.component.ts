@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { QuestionAndAnswer } from 'src/app/interfaces/question-interface';
 
 @Component({
@@ -7,15 +8,20 @@ import { QuestionAndAnswer } from 'src/app/interfaces/question-interface';
   styleUrls: ['./lp-correction.component.css'],
 })
 export class LpCorrectionComponent implements OnInit {
-  ngOnInit(): void {
-    this.hitRate();
-  }
-  questions: QuestionAndAnswer[] = JSON.parse(
-    localStorage.getItem('question')!
-  );
-
+  constructor(private route: Router) {}
+  questions: QuestionAndAnswer[] = [];
+  iscorrect: boolean = true;
   textHitsRate: string = '';
   numberHitRate: number = 0;
+
+  ngOnInit(): void {
+    if (this.questions.length === 0) {
+      this.route.navigate(['']);
+    } else {
+      this.questions = JSON.parse(localStorage.getItem('question')!);
+      this.hitRate();
+    }
+  }
 
   hitRate() {
     let hits = 0;
@@ -24,7 +30,6 @@ export class LpCorrectionComponent implements OnInit {
       if (
         this.questions[index].resposta_correta == this.questions[index].answered
       ) {
-        console.log('aqui');
         hits = hits + 1;
       }
     }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AlternativeQuestion } from 'src/app/interfaces/question-interface';
 
 @Component({
@@ -6,10 +6,12 @@ import { AlternativeQuestion } from 'src/app/interfaces/question-interface';
   templateUrl: './alternative-box.component.html',
   styleUrls: ['./alternative-box.component.css'],
 })
-export class AlternativeBoxComponent {
-  @Input({ required: true }) alternatives!: AlternativeQuestion;
-
+export class AlternativeBoxComponent implements OnInit {
+  @Input({ required: true }) nameRadioBox!: AlternativeQuestion;
+  @Input() styleBorder!: string;
+  @Input() isDisabled!: boolean;
   @Output() optionSelected: EventEmitter<string> = new EventEmitter<string>();
+  ngOnInit(): void {}
 
   onItemChange(value: any) {
     this.optionSelected.emit(value.target.value);
