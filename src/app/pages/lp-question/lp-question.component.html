@@ -6,6 +6,7 @@
     ></app-progress-bar>
 
     <app-box-question
+      [isCorrect]="iscorrect"
       (nextClick)="nextQuestion($event)"
       #boxQuestionComponent
       [question]="question"

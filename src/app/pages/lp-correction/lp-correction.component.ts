@@ -15,10 +15,10 @@ export class LpCorrectionComponent implements OnInit {
   numberHitRate: number = 0;
 
   ngOnInit(): void {
+    this.questions = JSON.parse(localStorage.getItem('question')!);
     if (this.questions.length === 0) {
       this.route.navigate(['']);
     } else {
-      this.questions = JSON.parse(localStorage.getItem('question')!);
       this.hitRate();
     }
   }

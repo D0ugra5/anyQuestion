@@ -24,6 +24,7 @@ export class LpWelcomeComponent {
         console.log(
           'O JSON não segue o formato da interface QuestionAndAnswer.'
         );
+        this.opened = true;
       }
     } catch (e: any) {
       localStorage.clear();

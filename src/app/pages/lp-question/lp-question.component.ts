@@ -8,6 +8,7 @@ import { QuestionAndAnswer } from 'src/app/interfaces/question-interface';
   styleUrls: ['./lp-question.component.css'],
 })
 export class LpQuestionComponent implements OnInit {
+  iscorrect: boolean = false;
   question: QuestionAndAnswer = {
     alternatives: { a: '', b: '', c: '', d: '' },
     pergunta: '',
@@ -23,7 +24,6 @@ export class LpQuestionComponent implements OnInit {
   progressBar: number = 23;
 
   ngOnInit(): void {
-    console.log(this.question);
     if (this.questions.length === 0) {
       this.router.navigate(['/']);
     } else {

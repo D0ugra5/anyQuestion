@@ -42,7 +42,9 @@ export class BoxQuestionComponent implements OnInit {
   borderColorRightOrWrong(alternative: string): string {
     const option = this.getValueAlternative(alternative);
     const notBorder = 'none';
-    if ((this.isCorrect = false)) return notBorder;
+    if (!this.isCorrect) {
+      return notBorder;
+    }
 
     if (option === this.question.resposta_correta) {
       return '1px solid green';
