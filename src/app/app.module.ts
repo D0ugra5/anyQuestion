@@ -6,7 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClarityModule, ClrModal, ClrModalModule } from '@clr/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AlternativeBoxComponent } from './components/alternative-box/alternative-box.component';
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 import { BoxQuestionComponent } from './components/box-question/box-question.component';
 import { WelcomeBoxComponent } from './components/welcome-box/welcome-box.component';
@@ -22,7 +21,6 @@ import { LpWelcomeComponent } from './pages/lp-welcome/lp-welcome.component';
     WelcomeBoxComponent,
     LpQuestionComponent,
     ProgressBarComponent,
-    AlternativeBoxComponent,
     LpCorrectionComponent,
   ],
   imports: [
