@@ -41,4 +41,15 @@ export class LpCorrectionComponent implements OnInit {
       this.textHitsRate = `are you dumb? Traduzindo... Você Burro Tente Outra vez ${this.numberHitRate}%;`;
     }
   }
+
+  tryOut() {
+    this.questions.forEach((question) => {
+      question.answered = '';
+    });
+
+    localStorage.setItem('question', JSON.stringify(this.questions));
+    localStorage.setItem('answer', '');
+
+    this.route.navigate(['/question']);
+  }
 }

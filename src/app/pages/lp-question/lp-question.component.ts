@@ -33,12 +33,10 @@ export class LpQuestionComponent implements OnInit {
 
   nextQuestion(optionMarked?: string): void {
     const howQuestionBefore = this.questionNow();
+
     if (optionMarked) {
       localStorage.setItem('answer', String(howQuestionBefore));
-    } else {
-      //tratar aqui se não houver alternativa selecionada
     }
-
     const isFinish = this.questionNow() == this.totalyQuestions ? true : false;
 
     if (isFinish) {

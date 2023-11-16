@@ -19,6 +19,19 @@
 
   padding: 1rem;
 }
+.try-out {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 4rem;
+  margin-right: 0.5rem;
+}
+
+.try-out button {
+  width: 15rem;
+
+  color: white;
+}
 
 @media screen and (max-width: 600px) {
   .container {
@@ -29,5 +42,11 @@
   .text-result p {
     font-size: 1rem;
     margin-top: 0;
+  }
+
+  .try-out button {
+    width: 5rem;
+
+    color: white;
   }
 }

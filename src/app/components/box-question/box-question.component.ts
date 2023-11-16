@@ -25,6 +25,8 @@ export class BoxQuestionComponent implements OnInit {
     if (this.optionsSelected) {
       this.nextClick.emit(this.optionsSelected);
       this.resetButton();
+    } else {
+      alert('Seleione uma alternativa');
     }
   }
 
