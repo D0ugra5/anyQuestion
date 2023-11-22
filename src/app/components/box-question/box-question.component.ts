@@ -14,6 +14,7 @@ export class BoxQuestionComponent implements OnInit {
   @Output() nextClick: EventEmitter<any> = new EventEmitter();
   @Input() hiddenNext!: boolean;
   @Input({ required: true }) question!: QuestionAndAnswer;
+
   optionsSelected: string = '';
   @Input() isCorrect!: boolean;
 
@@ -68,5 +69,9 @@ export class BoxQuestionComponent implements OnInit {
     );
 
     return keysAlternatives[index];
+  }
+
+  testeDoug() {
+    console.log('aqui');
   }
 }
